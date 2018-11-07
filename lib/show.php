@@ -2,7 +2,7 @@
 
 use metaxiii\blog\Article;
 
-function show($list)
+function showAll($list)
 {
     foreach ($list as $el) {
         $el = new Article($el);
@@ -11,7 +11,9 @@ function show($list)
         echo "<a href='{$el->getSlug()}' class='custom-link'><p>{$el->getContent()}</p></a>";
         echo "<div class='row'>";
         echo "<div class='col-6'>";
-        echo "<button class='btn btn-primary'>Lire l'article</button>";
+        echo "<a href='{$el->getSlug()}' class='custom-link text-white'>
+                <button class='btn btn-primary'>Lire l'article</button>
+                </a>";
         echo "</div>";
         echo "<div class='col-6'>";
         echo "<p class='text-right font-italic small red'>{$el->getDate()}</p>";

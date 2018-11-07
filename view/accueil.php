@@ -1,6 +1,5 @@
 <?php
 
-use metaxiii\blog\Article;
 use metaxiii\blog\ArticleDAO;
 
 require "include/head.php";
@@ -14,7 +13,7 @@ $listAll = $list->getAll();
         <div class="col-8 bg-secondary p-4">
             <h1>Derniers articles</h1>
             <?php
-                show($listAll);
+                showAll($listAll);
             ?>
         </div>
         <div class="col-4 bg-danger p-4">
