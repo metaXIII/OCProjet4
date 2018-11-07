@@ -1,4 +1,4 @@
 <?php
 require "constants.php";
 require "session.php";
-require "autoload.php";
+require "show.php";
