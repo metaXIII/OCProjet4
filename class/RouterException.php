@@ -18,7 +18,7 @@ class RouterException extends \Exception
     public function __construct(string $message = "", int $code = 0, Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
-        header('location:' . ROOT . '404');
+        header('location:' . ROOT . 'error');
         $this->show($message);
         $this->error = true;
     }

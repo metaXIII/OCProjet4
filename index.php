@@ -15,20 +15,20 @@ Autoloader::register();
 //echo $form->input("aze");
 //echo $form->submit();
 
-
-//$db = Database::getPdo();
-//$request = "SELECT * from article";
-//$result = $db->query($request);
-
-//var_dump($result->fetch());
-//
 $router = new Router($_GET['url']);
 $router->get('/', function () {
     include "view/accueil.php";
 });
-$router->get('/:slug', function ($slug) {
+$router->get("/error", function () {
+   include "view/error404.php";
+});
+$router->get('/login', function () {
+    include "view/login.php";
+});
+$router->get('/:slug', function () {
     include ('view/article.php');
 });
+
 //$router->get('/posts', function () {
 //    echo "tous les articles";
 //});
