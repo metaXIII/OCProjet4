@@ -1,5 +1,7 @@
 <?php
 
+namespace metaxiii\blog;
+
 class Database
 {
     private static $pdo = null;
@@ -14,9 +16,10 @@ class Database
 
         if (self::$pdo === null) {
             try {
-                self::$pdo = new PDO("mysql:host=" . $hostname . ";dbname = " .
-                    $dbname . ";charset = " . $charset, $username, $password);
-            } catch (Exception $e) {
+                self::$pdo = new \PDO("mysql:host=$hostname.;dbname=$dbname;charset=$charset",
+                $username, $password);
+                self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            } catch (\Exception $e) {
                 die("Erreur" . $e->getMessage());
             }
         }
