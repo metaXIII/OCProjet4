@@ -7,8 +7,7 @@ require 'class/Autoloader.php';
 
 Autoloader::register();
 
-require "lib/routes.php";
-?>
+require "lib/routes.php";?>
 
-<?php //include "lib/debug.php"; ?>
+
 <?php //include "include/footer.php"; ?>
