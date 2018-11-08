@@ -7,12 +7,6 @@ require 'class/Autoloader.php';
 
 Autoloader::register();
 
-
-//$form = new Form();
-//echo $form->input("aze");
-//echo $form->input("aze");
-//echo $form->submit();
-
 require "lib/routes.php";
 ?>
 
