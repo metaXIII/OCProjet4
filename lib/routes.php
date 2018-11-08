@@ -15,6 +15,9 @@ $router->get('/login', function () {
 $router->get('/admin', function () {
     include "view/admin.php";
 });
+$router->get('/admin', function () {
+    include "view/admin.php";
+});
 $router->get('/:slug', function () {
     include ('view/article.php');
 });
