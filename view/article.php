@@ -10,3 +10,5 @@ $list = new ArticleDAO();
 $listAll = $list->get($url);
 
 var_dump($listAll);
+
+include "lib/debug.php";
