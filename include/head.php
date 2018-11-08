@@ -12,7 +12,7 @@
 
 <body>
 
-<header>
+<header class="mb-4">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="<?= ROOT ?>">Accueil</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -32,4 +32,6 @@
         </div>
     </nav>
 </header>
+
+<?= flash() ?>
 
