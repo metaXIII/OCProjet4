@@ -15,8 +15,12 @@ $router->get('/login', function () {
 $router->post('/login', function () {
     include "view/login.php";
 });
+$router->get('/admin', function () {
+    include "view/admin.php";
+});
 $router->get('/:slug', function () {
     include ('view/article.php');
 });
+
 
 $router->run();
