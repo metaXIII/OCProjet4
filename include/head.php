@@ -23,8 +23,8 @@
         <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <?= isset($_SESSION['user']) ?
-                        '<a class="nav-link" href="login">Se déconnecter</a>' :
+                    <?= isset($_SESSION['Auth']) ?
+                        '<a class="nav-link" href="logout">Se déconnecter</a>' :
                         '<a class="nav-link" href="login">Se connecter</a>';
                     ?>
                 </li>
