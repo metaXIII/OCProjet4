@@ -12,6 +12,9 @@ $router->get("/error", function () {
 $router->get('/login', function () {
     include "view/login.php";
 });
+$router->post('/login', function () {
+    include "view/login.php";
+});
 $router->get('/:slug', function () {
     include ('view/article.php');
 });
