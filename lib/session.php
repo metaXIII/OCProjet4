@@ -5,7 +5,7 @@ function flash () {
     if (isset($_SESSION['Flash'])) {
         extract($_SESSION['Flash']);
         unset($_SESSION['Flash']);
-        return "<div class='alert alert-$type'>$message</div>";
+        return "<div class='col-10 m-auto alert alert-$type'>$message</div>";
     }
 }
 

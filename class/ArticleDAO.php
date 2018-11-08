@@ -14,7 +14,7 @@ class ArticleDAO
     //CRUD
     public function getAll()
     {
-        $query = "SELECT slug, titre, content, DATE_FORMAT(date_article, '%d/%m/%Y') as date FROM article LIMIT 10";
+        $query = "SELECT slug, titre, content, DATE_FORMAT(date_article, '%d/%m/%Y') as date FROM article ORDER BY id DESC LIMIT 10";
         $req = $this->db->prepare($query);
         $req->execute();
         return $req->fetchAll(\PDO::FETCH_ASSOC);

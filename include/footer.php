@@ -6,3 +6,5 @@
 <script src="./js/app.js"></script>
 </body>
 </html>
+
+<?php include "lib/debug.php";
