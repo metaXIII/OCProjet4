@@ -15,12 +15,8 @@
 <header class="mb-4">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="<?= ROOT ?>">Accueil</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
+        <div class="navbar-collapse flex-row-reverse">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <?= userIsConnected() ?
