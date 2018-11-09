@@ -5,7 +5,7 @@ namespace metaxiii\blog;
 class Article
 {
     private $id,
-            $titre,
+            $title,
             $slug,
             $content,
             $date;
@@ -79,17 +79,17 @@ class Article
     /**
      * @return mixed
      */
-    public function getTitre()
+    public function getTitle()
     {
-        return $this->titre;
+        return $this->title;
     }
 
     /**
-     * @param mixed $titre
+     * @param mixed $title
      */
-    public function setTitre($titre)
+    public function setTitle($title)
     {
-        $this->titre = $titre;
+        $this->title = $title;
     }
 
     /**
