@@ -19,3 +19,18 @@
 .bg-grey {
     background-color: #f7f7f9;
 }
+
+.bloc {
+    height: 250px;
+}
+
+.bloc-text {
+    position: relative;
+    top: 35%;
+    font-size: 40px;
+}
+
+.custom-link-admin, .custom-link-admin:hover, .custom-link-admin:active, .custom-link-admin:visited {
+    color: #fff;
+    text-decoration: none;
+}

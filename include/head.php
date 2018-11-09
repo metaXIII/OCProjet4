@@ -15,17 +15,16 @@
 <header class="mb-4">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="<?= ROOT ?>">Accueil</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
+        <div class="navbar-collapse flex-row-reverse">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <?= isset($_SESSION['user']) ?
-                        '<a class="nav-link" href="login">Se déconnecter</a>' :
-                        '<a class="nav-link" href="login">Se connecter</a>';
+                    <?= userIsConnected() ?
+                        '<a class="nav-link" href="' . ROOT . 'admin">Espace d\'administration</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="'. ROOT .'logout">Se déconnecter</a>' :
+                        '<a class="nav-link" href="'. ROOT .'login">Se connecter</a>';
                     ?>
                 </li>
             </ul>

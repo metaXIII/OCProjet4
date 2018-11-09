@@ -1,4 +1,7 @@
 <?php
+
+use metaxiii\blog\CommentDAO;
+
 session_start();
 
 function flash () {
@@ -12,4 +15,19 @@ function flash () {
 function setFlash($message, $type = 'success') {
     $_SESSION['Flash']['message'] = $message;
     $_SESSION['Flash']['type'] = $type;
+}
+
+function checkComment() {
+    $comment = new CommentDAO();
+    $comment = $comment->checkComment();
+    if ($comment > 1)
+        echo "<div class='col-10 m-auto alert alert-danger'>Vous avez des commentaires à modérer</div>";
+    else if ($comment === 1)
+        echo "<div class='col-10 m-auto alert alert-danger'>Vous avez un commentaire à modérer</div>";
+    else
+        echo "<div class='col-10 m-auto alert alert-success'>Aucun commentaire à modérer</div>";
+}
+
+function userIsConnected () {
+    return isset($_SESSION['Auth']) && $_SESSION['Auth'];
 }

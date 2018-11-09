@@ -2,7 +2,8 @@
 
 namespace metaxiii\blog;
 
-class UserDAO {
+class UserDAO
+{
 
     protected $db;
 
@@ -11,7 +12,8 @@ class UserDAO {
         $this->db = Database::getPdo();
     }
 
-    public function get(array $data = null) {
+    public function get(array $data = null)
+    {
         $name = $data['name'];
         $password = sha1($data['password']);
         $query = "SELECT * FROM user WHERE username = :username AND password = :password";
@@ -22,12 +24,11 @@ class UserDAO {
         if ($req->rowCount()) {
             setFlash("Vous êtes maintenant connecté", "success");
             $_SESSION['Auth'] = $req->rowCount();
-            header('location: ' .ROOT . 'admin');
+            header('location: ' . ROOT . 'admin');
             die();
-        }
-        else {
+        } else {
             setFlash("Mauvaise combinaison username / password", "danger");
-            header('location: ' .ROOT . 'login');
+            header('location: ' . ROOT . 'login');
             die();
         }
     }
