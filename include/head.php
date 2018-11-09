@@ -23,12 +23,12 @@
         <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <?= isset($_SESSION['Auth']) && $_SESSION['Auth'] ?
-                        '<a class="nav-link" href="admin">Espace d\'administration</a>
+                    <?= userIsConnected() ?
+                        '<a class="nav-link" href="' . ROOT . 'admin">Espace d\'administration</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="logout">Se déconnecter</a>' :
-                        '<a class="nav-link" href="login">Se connecter</a>';
+                <a class="nav-link" href="'. ROOT .'logout">Se déconnecter</a>' :
+                        '<a class="nav-link" href="'. ROOT .'login">Se connecter</a>';
                     ?>
                 </li>
             </ul>
