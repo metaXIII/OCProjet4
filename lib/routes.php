@@ -45,6 +45,9 @@ $router->get('/admin/commentaires', function () {
 $router->get('/:slug', function () {
     include('view/article.php');
 });
+$router->post('/:slug', function () {
+    include('view/article.php');
+});
 
 
 $router->run();

@@ -41,7 +41,7 @@ class Form
 
     public function textarea($data, $content = null)
     {
-        return $this->surrond("<textarea name='$data' id='$data' cols='30' rows='20'>$content</textarea>");
+        return $this->surrond("<textarea class='form-control' name='$data' id='$data' cols='30' rows='20'>$content</textarea>");
     }
 
     public function hidden ($data) {
