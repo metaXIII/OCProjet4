@@ -37,3 +37,24 @@
 .big {
     font-size: 20px;
 }
+
+.navbar-collapse {
+    text-align: right;
+    flex-basis: 0 !important;
+}
+
+.profil_image {
+    width: 100%;
+    max-width: 485px;
+    margin: auto;
+}
+
+.padding_login {
+    padding: 3rem !important;
+}
+
+@media screen and (max-width: 992px){
+    .padding_login {
+        padding: 1em 10px !important;
+    }
+}

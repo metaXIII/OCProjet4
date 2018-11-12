@@ -10,15 +10,15 @@ $listAll = $list->getAll();
 
 <main role="main" class="main">
     <div class="row">
-        <div class="col-8 p-4">
+        <div class="col-lg-8 p-4">
             <h1>Derniers articles</h1>
             <?php
                 showAll($listAll);
             ?>
         </div>
-        <div class="col-4 p-4">
+        <div class="col-lg-4 p-4 text-center">
             <h2>Qui suis-je ?</h2>
-            <img src="image/profil.jpg" alt="ma photo de profil" class="profil_image" style="width: 100%">
+            <img src="image/profil.jpg" alt="ma photo de profil" class="profil_image">
             <p>Acteur et écrivain, née le 16 novembre 1990</p>
             <p>Message de l'auteur du site :</p>
             <p class="bg-grey font-italic p-2 border rounded">
