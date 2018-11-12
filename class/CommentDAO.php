@@ -40,6 +40,24 @@ class CommentDAO
 
     public function getComment($data)
     {
+        $query = "SELECT * from comment WHERE id_article = :id and show_comment = 1";
+        $req = $this->db->prepare($query);
+        $req->execute([':id' => $data]);
+        return $req->fetchAll(\PDO::FETCH_ASSOC);
+    }
 
+
+    public function report($data)
+    {
+        $data = strip_tags(htmlspecialchars($data));
+        if (!(int)$data) {
+            return;
+        } else {
+            $query = "UPDATE comment 
+                        SET show_comment = 0
+                        WHERE id = :id";
+            $req = $this->db->prepare($query);
+            $req->execute([':id' => $data]);
+        }
     }
 }
