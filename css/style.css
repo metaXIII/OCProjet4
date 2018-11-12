@@ -2,7 +2,7 @@
     min-height: 800px;
     padding: 10px 15px;
     max-width: 1600px;
-    margin: 3rem auto auto auto;
+    margin: 0 auto auto auto;
 }
 
 .custom-link, .custom-link:active, .custom-link:visited {
@@ -33,4 +33,7 @@
 .custom-link-admin, .custom-link-admin:hover, .custom-link-admin:active, .custom-link-admin:visited {
     color: #fff;
     text-decoration: none;
+}
+.big {
+    font-size: 20px;
 }
