@@ -5,17 +5,7 @@ use metaxiii\blog\Form;
 
 include "include/head.php";
 
-if (isset($_POST) && !empty($_POST)) {
-    var_dump($_POST);
-    $action = new ArticleDAO();
-    if (isset($_POST['url'])) {
-        $action->update($_POST);
-    } else {
-        if ($_POST['Titre'] && $_POST['adminTextarea'] && !isset($_POST['url'])) {
-            $action->add($_POST);
-        }
-    }
-}
+checkPostArticle();
 
 
 $url = $_GET['url'];
@@ -40,10 +30,12 @@ if ($url === "admin/edit-article/") {
 }
 ?>
 
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=h255kxsxrmcj12dy73l52tggv8oddf006x3ee8y9pjtph0kc"></script>
-<script>
-    tinymce.init({
-        selector: '#adminTextarea'
-    })
-</script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=h255kxsxrmcj12dy73l52tggv8oddf006x3ee8y9pjtph0kc"></script>
+    <script>
+        tinymce.init({
+            selector: '#adminTextarea'
+        })
+    </script>
 
+<?php
+require "include/footer.php";

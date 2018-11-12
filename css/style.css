@@ -38,6 +38,10 @@
     font-size: 20px;
 }
 
+.btn {
+    color: #fff !important;
+}
+
 .navbar-collapse {
     text-align: right;
     flex-basis: 0 !important;
@@ -52,9 +56,15 @@
 .padding_login {
     padding: 3rem !important;
 }
+.padding_comment {
+    padding: 1.5rem!important
+}
 
 @media screen and (max-width: 992px){
     .padding_login {
         padding: 1em 10px !important;
+    }
+    .padding_comment {
+        padding: 1em 5px !important
     }
 }

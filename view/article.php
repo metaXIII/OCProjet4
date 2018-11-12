@@ -14,23 +14,7 @@ $listAllComment = $listComment->getComment($listAll['id']);
 
 $form = new Form();
 
-if (isset($_POST) && !empty($_POST)) {
-    //Suppression de commentaire
-    $action = new CommentDAO();
-    if (isset($_POST['delete'])) {
-        $action->report($_POST['delete']);
-        unset($_POST);
-        setFlash("Le message a bien été signalé, merci !", "danger");
-        header("location:" . ROOT . $_GET['url']);
-        die();
-    } else {
-        $action->add($_POST);
-        unset($_POST);
-        setFlash("Le message a bien été ajouté, merci !", "success");
-        header("location:" . ROOT . $_GET['url']);
-        die();
-    }
-}
+checkPostComment();
 require "include/head.php";
 
 ?>
@@ -40,12 +24,8 @@ require "include/head.php";
         <p><?= $listAll['content'] ?></p>
         <p class="text-right small">Publié le <?= $listAll['date'] ?></p>
     </div>
-
-
     <h2>Commentaires :</h2>
-
     <?php showCommentAllowed($listAllComment) ?>
-
     <form action="#" method="post">
         <?= $form->input("name") ?>
         <?= $form->textarea("commentaire"); ?>

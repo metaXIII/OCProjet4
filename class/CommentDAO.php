@@ -22,7 +22,6 @@ class CommentDAO
         $name = "";
         $commentaire = "";
         $url = 0;
-        var_dump($data);
         extract($data);
         $name = htmlspecialchars(strip_tags($name));
         $commentaire = htmlspecialchars(strip_tags($commentaire));
@@ -59,5 +58,38 @@ class CommentDAO
             $req = $this->db->prepare($query);
             $req->execute([':id' => $data]);
         }
+    }
+
+    public function getReportComment()
+    {
+        $query = "SELECT *
+                    FROM comment
+                    WHERE show_comment = 0";
+        $req = $this->db->prepare($query);
+        $req->execute();
+        return $req->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function rehabilited($data)
+    {
+        $data = strip_tags(htmlspecialchars($data));
+        if ((int)$data) {
+            $query = "UPDATE comment
+                    SET show_comment = 1
+                    WHERE id = :id";
+            $req = $this->db->prepare($query);
+            $req->execute(['id' => $data]);
+        }
+        setFlash("Le commentaire a bien été rajouté", "success");
+        header("location:" . ROOT . "admin");
+        die();
+    }
+
+    public function delete($data)
+    {
+        $this->db->exec("DELETE FROM comment WHERE id = $data");
+        setFlash("Le commentaire a bien été supprimé", "success");
+        header("location:" . ROOT . "admin");
+        die();
     }
 }

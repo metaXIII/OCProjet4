@@ -4,16 +4,8 @@ $_SESSION['Auth'] = 0;
 require "include/head.php";
 
 use metaxiii\blog\Form;
-use metaxiii\blog\UserDAO;
 
-if (isset($_POST) && !empty($_POST)) {
-
-    foreach ($_POST as $key => $value) {
-        $_POST[$key] = strip_tags(htmlspecialchars($value));
-    }
-    $user = new UserDAO();
-    $user->get($_POST);
-}
+checkPostUser();
 
 $form = new Form();
 ?>

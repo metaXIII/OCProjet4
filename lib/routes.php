@@ -36,11 +36,14 @@ $router->post('/admin/edit-article/', function () {
 $router->post('/admin/edit-article/:slug', function () {
     include "view/admin-edit-article.php";
 });
+$router->get('/admin/delete-comment-:slug', function () {
+    include "view/admin-delete-comment.php";
+});
 $router->get('/admin/delete-:slug', function () {
     include "view/admin-delete-article.php";
 });
 $router->get('/admin/commentaires', function () {
-    echo "vous êtes sur la page d'administration des commentaires";
+    include "view/admin-comment.php";
 });
 $router->get('/:slug', function () {
     include('view/article.php');
