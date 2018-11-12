@@ -21,11 +21,11 @@ function checkComment() {
     $comment = new CommentDAO();
     $comment = $comment->checkComment();
     if ($comment > 1)
-        echo "<div class='col-10 m-auto alert alert-danger'>Vous avez des commentaires à modérer</div>";
+        echo "<div class='toHide col-10 m-auto alert alert-danger'>Vous avez des commentaires à modérer</div>";
     else if ($comment === 1)
-        echo "<div class='col-10 m-auto alert alert-danger'>Vous avez un commentaire à modérer</div>";
+        echo "<div class='toHide col-10 m-auto alert alert-danger'>Vous avez un commentaire à modérer</div>";
     else
-        echo "<div class='col-10 m-auto alert alert-success'>Aucun commentaire à modérer</div>";
+        echo "<div class='toHide col-10 m-auto alert alert-success'>Aucun commentaire à modérer</div>";
 }
 
 function userIsConnected () {

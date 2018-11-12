@@ -14,7 +14,9 @@ class ArticleDAO
     //CRUD
     public function getAll()
     {
-        $query = "SELECT slug, title, content, DATE_FORMAT(date_article, '%d/%m/%Y') as date FROM article ORDER BY id DESC LIMIT 10";
+        $query = "SELECT slug, title, content, DATE_FORMAT(date_article, '%d/%m/%Y') as date 
+                    FROM article
+                    ORDER BY id DESC LIMIT 10";
         $req = $this->db->prepare($query);
         $req->execute();
         return $req->fetchAll(\PDO::FETCH_ASSOC);
@@ -47,6 +49,15 @@ class ArticleDAO
               VALUES (:slug, :titre, :content, NOW())";
             $req = $this->db->prepare($query);
             $req->bindValue(':slug', $slug);
+            $req->bindValue(':titre', $Titre);
+            $req->bindValue(':content', $adminTextarea);
+            $req->execute();
+        } else {
+            //Ajout d'un timestamp au slug
+            $query = "INSERT INTO article (slug, title, content, date_article) 
+              VALUES (:slug, :titre, :content, NOW())";
+            $req = $this->db->prepare($query);
+            $req->bindValue(':slug', $slug . time());
             $req->bindValue(':titre', $Titre);
             $req->bindValue(':content', $adminTextarea);
             $req->execute();
@@ -97,7 +108,6 @@ class ArticleDAO
     }
 
     public function delete($data) {
-        var_dump($data);
         $this->db->exec("DELETE FROM article WHERE slug = '$data'");
         setFlash("L'article a bien été supprimé","success");
         header("location:" . ROOT ."admin");

@@ -23,8 +23,8 @@
                         '<a class="nav-link" href="' . ROOT . 'admin">Espace d\'administration</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="'. ROOT .'logout">Se déconnecter</a>' :
-                        '<a class="nav-link" href="'. ROOT .'login">Se connecter</a>';
+                <a class="nav-link" href="' . ROOT . 'logout">Se déconnecter</a>' :
+                        '<a class="nav-link" href="' . ROOT . 'login">Se connecter</a>';
                     ?>
                 </li>
             </ul>

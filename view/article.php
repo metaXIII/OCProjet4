@@ -4,30 +4,29 @@ use metaxiii\blog\ArticleDAO;
 use metaxiii\blog\CommentDAO;
 use metaxiii\blog\Form;
 
-require "include/head.php";
 $urlparse = explode('/', rtrim($_GET['url'], '/'));
 $url = end($urlparse);
 
 $list = new ArticleDAO();
 $listAll = $list->get($url);
+$listComment = new CommentDAO();
+$listAllComment = $listComment->getComment($listAll['id']);
 
 $form = new Form();
-var_dump($listAll);
 
-if (isset($_POST) && !empty($_POST)) {
-    $action = new CommentDAO();
-    $action->add($_POST);
-}
+checkPostComment();
+require "include/head.php";
+
 ?>
-
-<div class="container mt-5 pt-5">
-    <h1><?= $listAll['title'] ?></h1>
-    <p><?= $listAll['content'] ?></p>
-    <p class="text-right small">Publié le <?= $listAll['date'] ?></p>
-
-
-    <h2>Commentaires</h2>
-    <form action="#" method="post" class="col-6 m-auto">
+<div class="container mt-5 pt-2">
+    <div>
+        <h1><?= $listAll['title'] ?></h1>
+        <p><?= $listAll['content'] ?></p>
+        <p class="text-right small">Publié le <?= $listAll['date'] ?></p>
+    </div>
+    <h2>Commentaires :</h2>
+    <?php showCommentAllowed($listAllComment) ?>
+    <form action="#" method="post">
         <?= $form->input("name") ?>
         <?= $form->textarea("commentaire"); ?>
         <?= $form->hidden($listAll['id']) ?>

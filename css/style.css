@@ -2,7 +2,7 @@
     min-height: 800px;
     padding: 10px 15px;
     max-width: 1600px;
-    margin: 3rem auto auto auto;
+    margin: 0 auto auto auto;
 }
 
 .custom-link, .custom-link:active, .custom-link:visited {
@@ -33,4 +33,38 @@
 .custom-link-admin, .custom-link-admin:hover, .custom-link-admin:active, .custom-link-admin:visited {
     color: #fff;
     text-decoration: none;
+}
+.big {
+    font-size: 20px;
+}
+
+.btn {
+    color: #fff !important;
+}
+
+.navbar-collapse {
+    text-align: right;
+    flex-basis: 0 !important;
+}
+
+.profil_image {
+    width: 100%;
+    max-width: 485px;
+    margin: auto;
+}
+
+.padding_login {
+    padding: 3rem !important;
+}
+.padding_comment {
+    padding: 1.5rem!important
+}
+
+@media screen and (max-width: 992px){
+    .padding_login {
+        padding: 1em 10px !important;
+    }
+    .padding_comment {
+        padding: 1em 5px !important
+    }
 }
