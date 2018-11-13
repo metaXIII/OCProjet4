@@ -35,7 +35,7 @@ function showAllAdmin($list)
         echo "<p>{$el->getContent()}</p>";
         echo "<div class='row'>";
         echo "<div class='col-lg-6'>";
-        echo "<a href='edit-article/{$el->getSlug()}' class='btn btn-primary'>Modifier l'article</a>";
+        echo "<a href='edit-article/{$el->getSlug()}' class='btn btn-success'>Modifier l'article</a>";
         echo "<a class='btn btn-danger' href='delete-{$el->getSlug()}'>Supprimer l'article</a>";
         echo "</div>";
         echo "<div class='col-lg-6'>";
@@ -90,6 +90,7 @@ function checkPostArticle()
                 $action->add($_POST);
                 setFlash("L'article a bien été ajouté", "success");
                 header("Location:" . ROOT . "admin");
+                die();
             } else {
                 setFlash("Il y a eu une erreur, des champs n'ont peut être pas été remplis ", "danger");
                 header("location:" . ROOT . "admin/edit-article/");

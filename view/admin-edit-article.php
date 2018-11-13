@@ -3,10 +3,10 @@
 use metaxiii\blog\ArticleDAO;
 use metaxiii\blog\Form;
 
-include "include/head.php";
 
 checkPostArticle();
 
+include "include/head.php";
 
 $url = $_GET['url'];
 if ($url === "admin/edit-article/") {
@@ -22,7 +22,7 @@ if ($url === "admin/edit-article/") {
     $result = $article->get($url);
     $form = new Form();
     echo "<form action='#' method='post' class='col-8 m-auto'>";
-    echo $form->input("Titre", $result['title']);
+    echo $form->input("Titre", str_replace("'", "&#145;", $result['title']));
     echo $form->textarea("adminTextarea", $result['content']);
     echo $form->hidden($url);
     echo $form->submit("Modifier l'article");

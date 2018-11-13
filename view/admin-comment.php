@@ -2,9 +2,9 @@
 
 use metaxiii\blog\CommentDAO;
 
-require "include/head.php";
 $list = new CommentDAO();
 $listAll = $list->getReportComment();
+require "include/head.php";
 ?>
     <main role="main" class="main">
         <div class="row">

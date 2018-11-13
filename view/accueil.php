@@ -2,10 +2,11 @@
 
 use metaxiii\blog\ArticleDAO;
 
-require "include/head.php";
-
 $list = new ArticleDAO();
 $listAll = $list->getAll();
+
+require "include/head.php";
+
 ?>
 
     <main role="main" class="main">

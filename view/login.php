@@ -1,13 +1,13 @@
 <?php
 
-$_SESSION['Auth'] = 0;
-require "include/head.php";
-
 use metaxiii\blog\Form;
 
+$_SESSION['Auth'] = 0;
 checkPostUser();
-
 $form = new Form();
+require "include/head.php";
+
+
 ?>
 
 

@@ -16,7 +16,7 @@ class ArticleDAO
     {
         $query = "SELECT slug, title, content, DATE_FORMAT(date_article, '%d/%m/%Y') as date 
                     FROM article
-                    ORDER BY id DESC LIMIT 10";
+                    ORDER BY id DESC";
         $req = $this->db->prepare($query);
         $req->execute();
         return $req->fetchAll(\PDO::FETCH_ASSOC);
@@ -42,6 +42,7 @@ class ArticleDAO
         while (strpos($slug, '--')) {
             $slug = str_replace("--", "-", $slug);
         }
+        $Titre = htmlspecialchars($Titre);
         $verif = $this->get($slug);
         //Création d'article
         if (!$verif) {
@@ -71,6 +72,7 @@ class ArticleDAO
         $url = "";
         extract($data);
         $regex = '#[^a-zA-Z\ds:]#';
+        $Titre = htmlspecialchars($Titre);
         $slug = strtolower(preg_replace($regex, "-", str_replace(" ", "-", rtrim($Titre))));
         while (strpos($slug, '--')) {
             $slug = str_replace("--", "-", $slug);
@@ -88,8 +90,8 @@ class ArticleDAO
             $req->bindValue(':content', $adminTextarea);
             $req->bindValue(':url', $url);
             $req->execute();
-            setFlash("L'article a bien été modifié","success");
-            header("location:" . ROOT ."admin");
+            setFlash("L'article a bien été modifié", "success");
+            header("location:" . ROOT . "admin");
             die();
         } else {
             $query = "UPDATE article
@@ -101,16 +103,17 @@ class ArticleDAO
             $req->bindValue(':content', $adminTextarea);
             $req->bindValue(':url', $url);
             $req->execute();
-            setFlash("L'article a bien été modifié","success");
-            header("location:" . ROOT ."admin");
+            setFlash("L'article a bien été modifié", "success");
+            header("location:" . ROOT . "admin");
             die();
         }
     }
 
-    public function delete($data) {
+    public function delete($data)
+    {
         $this->db->exec("DELETE FROM article WHERE slug = '$data'");
-        setFlash("L'article a bien été supprimé","success");
-        header("location:" . ROOT ."admin");
+        setFlash("L'article a bien été supprimé", "success");
+        header("location:" . ROOT . "admin");
         die();
     }
 }
