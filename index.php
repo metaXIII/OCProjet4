@@ -1,13 +1,12 @@
 <?php
 use metaxiii\blog\Autoloader;
 
-require 'class/Database.php';
-include 'lib/list.php';
-require 'class/Autoloader.php';
+include 'controller/list.php';
+require 'model/Autoloader.php';
 
 Autoloader::register();
 
-require "lib/routes.php";?>
+require "controller/routes.php";
 
 
-<?php //include "include/footer.php"; ?>
+

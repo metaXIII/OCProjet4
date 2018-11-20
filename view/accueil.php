@@ -18,7 +18,7 @@ $listAll = $list->getAll();
             </div>
             <div class="col-lg-4 p-4 text-center">
                 <h2>Qui suis-je ?</h2>
-                <img src="image/profil.jpg" alt="ma photo de profil" class="profil_image">
+                <img src="public/image/profil.jpg" alt="ma photo de profil" class="profil_image">
                 <p class="font-weight-bold">Acteur et écrivain, née le 16 novembre 1990</p>
                 <p>Message de l'auteur du site :</p>
                 <p class="bg-grey font-italic p-2 border rounded">

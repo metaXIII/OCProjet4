@@ -20,4 +20,3 @@ $form = new Form();
 </div>
 <?php
 require "include/footer.php";
-?>

@@ -6,8 +6,8 @@
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog pour écrivain</title>
-    <link rel="stylesheet" href="<?= ROOT ?>css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<?= ROOT ?>css/style.css" type="text/css">
+    <link rel="stylesheet" href="<?= ROOT ?>public/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= ROOT ?>public/css/style.css" type="text/css">
 </head>
 
 <body>
