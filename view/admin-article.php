@@ -2,6 +2,11 @@
 
 use metaxiii\blog\ArticleDAO;
 
+if (!userIsConnected()) {
+    header("Location:" . ROOT);
+    die();
+}
+
 $list = new ArticleDAO();
 $listAll = $list->getAll();
 require "include/head.php";

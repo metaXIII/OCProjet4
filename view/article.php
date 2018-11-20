@@ -35,4 +35,5 @@ require "include/head.php";
 </div>
 
 
-<?php require "include/footer.php" ?>
+<?php
+require "include/footer.php";
